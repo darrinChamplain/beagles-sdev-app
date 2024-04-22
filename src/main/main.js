@@ -20,8 +20,9 @@ export default function Main() {
     return (
         <div className="main">
             <div class="menu">
-                <div class="menu-item" onClick={selNewPet}>Register a Pet</div>
-                <div class="menu-item" onClick={selReports}>Reports</div>
+                {page === "Pet" ? <div class="menu-item-selected">Add Pet</div> : <div class="menu-item" onClick={selNewPet}>Add Pet</div>}
+                {page === "Report" ? <div class="menu-item-selected">Reports</div> : <div class="menu-item" onClick={selReports}>Reports</div>}
+                <div class="menu-title">{page === "Pet" ? "Now adding a new pet to the dataset!" : "Reviewing Reports"}</div>
             </div>
             {page === "Home" ?
                 <Home></Home>
